@@ -8,7 +8,7 @@ import ddf.minim.Minim;
 import ddf.minim.analysis.BeatDetect;
 import processing.core.PApplet;
 
-public class MusicVisual extends PApplet
+public class Heart extends PApplet
 {
     Minim m;
     AudioPlayer ap;
@@ -41,6 +41,8 @@ public class MusicVisual extends PApplet
         size(1024, 1000);
     }
 
+    BeatDetect beat;
+
     public void setup() 
     {
         m = new Minim(this);
@@ -52,16 +54,8 @@ public class MusicVisual extends PApplet
         beat.detectMode(BeatDetect.FREQ_ENERGY);
     }
 
-    BeatDetect beat;
     Serial port;
-    int bgColor = color(255, 255,255);
-    int heartColor = color(255,0,0);
-    float beatSize = 10;
-    float beatMaxSize = 100;
-    float beatSpeed = 0.5f;
-    float beatDecay = 0.9f;
-    float threshold = 50;
-    private float beatMinSize;
+    int bgColor = color(255, 255, 255);
 
     public void draw() 
     {
@@ -70,8 +64,13 @@ public class MusicVisual extends PApplet
         drawHeart();
     }
 
+    int heartColor = color(255,0,0);
+    float beatSize = 10;
+    float beatMaxSize = 100;
+    float beatDecay = 0.9f;
+
     public void analyzeMusic()
-     {
+    {
         beat.detect(ap.mix);
         if (beat.isOnset())
         {
@@ -79,19 +78,20 @@ public class MusicVisual extends PApplet
             beatSize = beatMaxSize;
         }
         beatSize *= beatDecay;
-     }
+    }
+
+    float beatSpeed = 0.5f;
+    float threshold = 50;
+    private float beatMinSize;
 
     public void drawHeart()
     {
         float heartSize = map(ap.left.level(), 0, 1, 50, 200) * 8;
 
-        // stroke(0); // set the stroke color to black
-        // strokeWeight(2); // set the stroke weight to 2 pixels
-        // line(511.5f, 300, 511.5f, 900); // draw a line from (50, 50) to (350, 350)
 
         strokeWeight(4);
-        stroke(heartColor);
-        fill(heartColor);
+        stroke(255, 0, 0);
+        fill(255, 0, 0);
         float bezierOffset = heartSize/6; // adjust this value to increase or decrease the spacing between the bezier curves
         beginShape();
         vertex(width/2, height/2 + heartSize/2);
