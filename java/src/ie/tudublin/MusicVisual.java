@@ -38,7 +38,8 @@ public class MusicVisual extends PApplet
 
     public void settings()
     {
-        size(1024, 1000);
+        //size(512, 500);
+        fullScreen();
     }
 
     public void setup() 
@@ -46,8 +47,6 @@ public class MusicVisual extends PApplet
         m = new Minim(this);
         ap = m.loadFile("Believer.mp3", 1024);
         ap.play();
-        // ab = ap.mix;
-        // colorMode(HSB);
         beat = new BeatDetect();
         beat.detectMode(BeatDetect.FREQ_ENERGY);
     }
@@ -92,7 +91,7 @@ public class MusicVisual extends PApplet
         strokeWeight(4);
         stroke(heartColor);
         fill(heartColor);
-        float bezierOffset = heartSize/6; // adjust this value to increase or decrease the spacing between the bezier curves
+        float bezierOffset = heartSize/6; 
         beginShape();
         vertex(width/2, height/2 + heartSize/2);
         bezierVertex(width/4 - heartSize/2, height/2 - bezierOffset - heartSize/80, width/2 - heartSize/80, height/2 - heartSize/2 + bezierOffset, width/2, height/2 - heartSize/80);
