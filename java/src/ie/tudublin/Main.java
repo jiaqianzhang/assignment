@@ -28,11 +28,28 @@ public class Main
         processing.core.PApplet.runSketch( a, new Rain());
     }
 
+	public static void visuals()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Visuals());
+    }
+	public static void Rainbow()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Rainbow());
+    }
 
-	
+	public static void Sphere()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Sphere() {
+			
+		});
+    }
+
 	
 	public static void main(String[] args)
 	{
-		Rain();
+		Rainbow();
 	}
 }
