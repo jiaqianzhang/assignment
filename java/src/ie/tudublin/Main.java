@@ -2,20 +2,16 @@ package ie.tudublin;
 
 public class Main
 {	
-	public static void heart()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Heart());
-    }
 
-	public static void rain()
+	public void startUI()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Rain());
-    }
+        processing.core.PApplet.runSketch( a, new MyVisual());		
+	}
 
 	public static void main(String[] args)
 	{
-		rain();
+		Main main = new Main();
+		main.startUI();			
 	}
 }
