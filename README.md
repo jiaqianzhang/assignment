@@ -21,12 +21,7 @@ We used a mix of 2D and 3D visuals in the program. Our first visual featured a h
 # How it works
 
 # What I am most proud of in the assignment
-We are proud of figuring out how to combine each of our visuals and make the pressing keys work. And we learnt how to set up our own git repository and how we can all collaborate and allowing us to appreciate the progress we made as a team. We played around with each other’s code and helped each other out.
-
-We are especially proud of our third visual as it look one of our team member a lot of time and effort to do it line by line.
-
-We are proud of all our visuals, through effective communication and teamwork we overcame issues and tried our best to make the visuals appealing. The end result is satisfying and we all felt accomplished.
-
+We are proud of figuring out how to combine each of our visuals and make the pressing keys work. And we learnt how to set up our own git repository and how we can all collaborate and allowing us to appreciate the progress we made as a team. We played around with each other’s code and helped each other out. We are especially proud of our third visual as it look one of our team member a lot of time and effort to do it line by line. We are proud of all our visuals, through effective communication and teamwork we overcame issues and tried our best to make the visuals appealing. The end result is satisfying and we all felt accomplished.
 
 # Markdown Tutorial
 
