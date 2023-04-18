@@ -1,8 +1,8 @@
 # Music Visualiser Project
 
-Name:
+Name: Jia Zhang, Laura Wei, Manar Saighi
 
-Student Number: 
+Student Number: C21408862, C21371683, C21440946
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
