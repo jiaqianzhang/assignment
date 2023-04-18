@@ -8,13 +8,8 @@ public class MyVisual extends Visual
 
     public void settings()
     {
-        size(1024, 500);
-        
         // Use this to make fullscreen
-        //fullScreen();
-
-        // Use this to make fullscreen and use P3D for 3D graphics
-        //fullScreen(P3D, SPAN); 
+        fullScreen(P3D);
     }
 
     public void setup()
@@ -49,7 +44,6 @@ public class MyVisual extends Visual
         if (key == '2')
         {
             visual = 2;
-
         }
         if (key == '3')
         {
@@ -80,19 +74,19 @@ public class MyVisual extends Visual
         switch(visual)
         {
             case 1:
-            jh.render();
-            break;
+                jh.draw();
+                break;
 
             case 2: 
-            ls.render();
-            break;
+                ls.draw();
+                break;
 
             case 3:
-            mb.render();
-            break;
+                mb.draw();
+                break;
 
             default:
-            break;
+                break;
         }
     }
 }

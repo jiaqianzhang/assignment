@@ -8,7 +8,7 @@ import ddf.minim.Minim;
 import ddf.minim.analysis.BeatDetect;
 import processing.core.PApplet;
 
-public class LauraSun<color> extends PApplet
+public class LauraSun extends PApplet
 {
     Minim m;
     AudioPlayer ap;
@@ -59,6 +59,7 @@ public class LauraSun<color> extends PApplet
             dropX[i] = random(width);
             dropY[i] = random(height);
         }
+        g = createGraphics(width, height);
     }
    
     BeatDetect beat;
@@ -67,7 +68,7 @@ public class LauraSun<color> extends PApplet
 
     public void draw() 
     {
-        background(0);
+        super.background(0);
         drawSun();
         drawSeawaves();
         drawLightning();
@@ -259,5 +260,9 @@ public class LauraSun<color> extends PApplet
         ap.close();
         m.stop();
         super.stop();
+    }
+
+    public void render() 
+    {
     }
 }

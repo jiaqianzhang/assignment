@@ -180,4 +180,7 @@ public class JiaHeart extends PApplet
         m.stop(); // stop process in minim library
         super.stop(); // stop process in the superclass's stop() 
     }
+
+    public void render() {
+    }
 }

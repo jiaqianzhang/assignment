@@ -318,4 +318,8 @@ public class ManarBrain extends PApplet
         ap.close();
         m.stop();
     }
+
+    public void render() {
+        return render;
+    }
 }
