@@ -9,7 +9,7 @@ import ddf.minim.Minim;
 import ddf.minim.analysis.BeatDetect;
 import processing.core.PApplet;
 
-public class Heart extends PApplet
+public class JiaHeart extends PApplet
 {
     Minim m;
     AudioPlayer ap;

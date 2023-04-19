@@ -22,14 +22,14 @@ public class MyVisual extends Visual
         startMinim();
                 
         // Call loadAudio to load an audio file to process 
-        loadAudio("Believer.mp3");
+        loadAudio("Believer.wav");
 
         // Call this instead to read audio from the microphone
         startListening(); 
         
-        jh = new JiaHeart();
-        ls = new LauraSun();
-        mb = new ManarBrain();
+        jh = new JiaHeart(this);
+        ls = new LauraSun(this);
+        mb = new ManarBrain(this);
     }
 
     int visual;
@@ -80,16 +80,16 @@ public class MyVisual extends Visual
         switch(visual)
         {
             case 1:
-            jh.render();
-            break;
+                jh.draw();
+                break;
 
             case 2: 
-            ls.render();
-            break;
+                ls.draw();
+                break;
 
             case 3:
-            mb.render();
-            break;
+                mb.draw();
+                break;
 
             default:
             break;

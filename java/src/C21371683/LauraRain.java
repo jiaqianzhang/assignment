@@ -1,4 +1,4 @@
-package ie.tudublin;
+// package ie.tudublin;
 
 import java.io.Serial;
 
@@ -8,7 +8,7 @@ import ddf.minim.Minim;
 import ddf.minim.analysis.BeatDetect;
 import processing.core.PApplet;
 
-public class Rain<color> extends PApplet
+public class LauraRain<color> extends PApplet
 {
     Minim m;
     AudioPlayer ap;

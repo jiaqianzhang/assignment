@@ -6,7 +6,7 @@ import ddf.minim.Minim;
 import processing.core.PApplet;
 import ddf.minim.AudioInput;
  
-public class Brain extends PApplet
+public class ManarBrain extends PApplet
 {
     Minim m;
     AudioPlayer ap;
