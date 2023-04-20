@@ -1,7 +1,5 @@
 package ie.tudublin;
  
-import java.io.Serial;
- 
 import ddf.minim.AudioBuffer;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
@@ -13,6 +11,7 @@ public class LauraSun
     AudioPlayer ap;
     AudioBuffer ab;
     MyVisual p;
+    BeatDetect beat;
  
     //int mode = 0;
     int numDrops = 100; // set the number of drops to 25
@@ -20,53 +19,12 @@ public class LauraSun
     float[] dropY = new float[numDrops];
     float lightningProbability = 0.05f; // set the probability of lightning occurring
  
-    public LauraSun(MyVisual myVisual) {
-    }
- 
-    public void keyPressed()
+    public LauraSun(MyVisual p, BeatDetect beat) 
     {
-        // if (key >= '0' && key <= '9')
-        // {
-        //     mode = key - '0';
-        // }
-        if (p.keyCode == ' ')
-        { // Use the integer code for the spacebar key
-            if (ap.isPlaying())
-            {
-                ap.pause();
-            }
-            else
-            {
-                ap.rewind();
-                ap.play();
-            }
-        }
-    }
- 
-    public void settings()
-    {
-        p.size(1024, 1000);
-    }
- 
-    public void setup()
-    {
-        m = new Minim(this);
-        ap = m.loadFile("Believer.mp3", 1024);
-        ap.play();
- 
-        beat = new BeatDetect();
-        beat.detectMode(BeatDetect.FREQ_ENERGY);
- 
-        for (int i = 0; i < dropX.length; i++)
-        {
-            dropX[i] = p.random(p.width);
-            dropY[i] = p.random(p.height);
-        }
-        p.g = p.createGraphics(p.width, p.height);
+        this.p = p;
+        this.beat = beat;
     }
    
-    BeatDetect beat;
-    Serial port;
     private int c1;
  
     public void draw()

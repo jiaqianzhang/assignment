@@ -19,39 +19,7 @@ public class ManarBrain
     {
         this.p = p;
     }
- 
-    public void keyPressed()
-    {
-        if (p.keyCode == ' ')
-        {
-            if (ap.isPlaying())
-            {
-                ap.pause();
-            }
-            else
-            {
-                ap.rewind();
-                ap.play();
-            }
-        }
-    }
- 
-    public void settings()
-    {
-        p.size(1000, 1024);
-    }
- 
-    public void setup()
-    {
-        m = new Minim(p);
-        ap = m.loadFile("Believer.mp3", 1024);
-        ap.play();
-        ab = ap.mix;
- 
-        y = p.height/500;//circle
-        smoothedY = y;  
-    }
- 
+
     float off = 0;
  
     float lerpedBuffer[] = new float[1024];

@@ -1,10 +1,32 @@
 package ie.tudublin;
 
+import java.io.Serial;
+
+import ddf.minim.analysis.BeatDetect;
+
 public class MyVisual extends Visual
 {    
     JiaHeart jh;
     LauraSun ls;
     ManarBrain mb;
+    BeatDetect beat;
+    Serial port;
+
+    public BeatDetect getBeat() {
+        return beat;
+    }
+
+    public void setBeat(BeatDetect beat) {
+        this.beat = beat;
+    }
+
+    public Serial getPort() {
+        return port;
+    }
+
+    public void setPort(Serial port) {
+        this.port = port;
+    }
 
     public void settings()
     {
@@ -26,9 +48,11 @@ public class MyVisual extends Visual
 
         // Call this instead to read audio from the microphone
         startListening(); 
+        // beat = new BeatDetect();
+        // port = new Serial();
         
-        jh = new JiaHeart(this);
-        ls = new LauraSun(this);
+        jh = new JiaHeart(this, beat, port);
+        ls = new LauraSun(this, beat);
         mb = new ManarBrain(this);
     }
 

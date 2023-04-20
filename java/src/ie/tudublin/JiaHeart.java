@@ -14,44 +14,13 @@ public class JiaHeart
     AudioPlayer ap;
     AudioBuffer ab;
     MyVisual p;
+    BeatDetect beat;
  
-    public JiaHeart(MyVisual p)
+    public JiaHeart(MyVisual p, BeatDetect beat, Serial port)
     {
         this.p = p;
-    }
- 
-    // keyboard
-    public void keyPressed()
-    {
-        if (p.keyCode == ' ') // press spacebar
-        {
-            if (ap.isPlaying()) // if audio is playing
-            {
-                ap.pause(); // it stops it
-            }
-            else // if its not
-            {
-                ap.rewind(); // rewind audio
-                ap.play(); // and play
-            }
-        }
-    }
- 
-    public void settings()
-    {  
-        // size of screen
-        p.size(1024, 1000);
-    }
- 
-    BeatDetect beat; // variable for detecting beat
- 
-    public void setup()
-    {
-        m = new Minim(p); // initialise minim library
-        ap = m.loadFile("Believer.wav", 1024); // load music file
-        ap.play(); // play audio file
-        beat = new BeatDetect(); // initialise BeatDetect class
-        beat.detectMode(BeatDetect.FREQ_ENERGY); // set mode for detecting beats to freq. energy
+        this.beat = beat;
+        this.port = port;
     }
  
     Serial port; // declare a new Serial object
@@ -60,18 +29,22 @@ public class JiaHeart
     {
         p.background(0); // set background to black
         analyzeMusic(); // call method to detect beats in the audio
-        if (p.key == '1') // if press 1 on keyboard
-        {
-            leftHeart(); // calls leftHeart
-        }
-        if (p.key == '2') // if press 2 on keyboard
-        {
-            rightHeart(); // calls rightHeart
-        }
-        if (p.key == '3') // if press 3 on keyboard
-        {
-            fullHeart(); // display fullHeart
-        }
+        // beat = new BeatDetect();
+        // port = new Serial(this, "port", 9600);
+
+
+        // if (p.key == '1') // if press 1 on keyboard
+        // {
+        //     leftHeart(); // calls leftHeart
+        // }
+        // if (p.key == '2') // if press 2 on keyboard
+        // {
+        //     rightHeart(); // calls rightHeart
+        // }
+        // if (p.key == '3') // if press 3 on keyboard
+        // {
+        //     fullHeart(); // display fullHeart
+        // }
     }
  
     int heartColor;
