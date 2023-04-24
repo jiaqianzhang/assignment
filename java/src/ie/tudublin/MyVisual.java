@@ -8,27 +8,26 @@ public class MyVisual extends Visual
 
     public void settings()
     {
-        size(1024, 500);
-       
+        //size(1024, 500);
         // Use this to make fullscreen
         //fullScreen();
 
         // Use this to make fullscreen and use P3D for 3D graphics
-        //fullScreen(P3D, SPAN);
+        fullScreen(P3D, SPAN);
     }
 
     public void setup()
     {
         startMinim();
-               
-        // Call loadAudio to load an audio file to process
+
+      // Call loadAudio to load an audio file to process 
         loadAudio("Believer.mp3");
 
         // Call this instead to read audio from the microphone
-        startListening();
-       
-        jh = new JiaHeart();
-        ls = new LauraSun();
+        startListening(); 
+
+        JiaHeart jh = new JiaHeart();
+        LauraSun ls = new LauraSun();
         mb = new ManarBrain();
     }
 
@@ -57,22 +56,20 @@ public class MyVisual extends Visual
         }
     }
 
-   
-
     public void draw()
     {
         background(0);
         try
         {
             // Call this if you want to use FFT data
-            calculateFFT();
+            calculateFFT(); 
         }
         catch(VisualException e)
         {
             e.printStackTrace();
         }
         // Call this is you want to use frequency bands
-        calculateFrequencyBands();
+        calculateFrequencyBands(); 
 
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();

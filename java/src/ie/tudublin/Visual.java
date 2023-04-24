@@ -3,7 +3,7 @@ import processing.core.PApplet;
 import ddf.minim.*;
 import ddf.minim.analysis.FFT;
 
-public abstract class Visual extends PApplet
+public class Visual extends PApplet
 {
     private int frameSize = 512;
     private int sampleRate = 44100;
@@ -16,9 +16,13 @@ public abstract class Visual extends PApplet
     private FFT fft;
     private float amplitude  = 0;
     private float smothedAmplitude = 0;
-    public void startMinim()
+
+    public void setup() 
     {
         minim = new Minim(this);
+        ap = minim.loadFile("Believer.mp3", 1024);
+        ap.play();
+        ab = ap.mix;
         fft = new FFT(frameSize, sampleRate);
         bands = new float[(int) log2(frameSize)];
         smoothedBands = new float[bands.length];
@@ -66,20 +70,12 @@ public abstract class Visual extends PApplet
         average /= (float) w;
         bands[i] = average * 5.0f;
         smoothedBands[i] = lerp(smoothedBands[i], bands[i], 0.05f);
-        // lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
+        //lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
         }
     }
-    public void startListening()
+
+    public int getFrameSize()
     {
-        ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
-        ab = ai.left;
-    }
-    public void loadAudio(String filename)
-    {
-        ap = minim.loadFile("Believer.mp3", 1024);
-        ab = ap.left;
-    }
-    public int getFrameSize() {
         return frameSize;
     }
     public void setFrameSize(int frameSize) {

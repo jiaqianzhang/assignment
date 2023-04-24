@@ -4,52 +4,22 @@ import processing.core.PApplet;
 
 public class Main
 {	
-	public static void musicVisual()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new MusicVisual());
-    }
 
-	public static void Circles()
+	public void startUI()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Circles());
-    }
-
-	public static void Puddle()
+        processing.core.PApplet.runSketch( a, new MyVisual());		
+	}
+	public void startUI()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Puddle());
-    }
-
-	public static void Rain()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Rain());
-    }
-
-	public static void visuals()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Visuals());
-    }
-	public static void Rainbow()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Rainbow());
-    }
-
-	public static void Sphere()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Sphere() {
-			
-		});
-    }
-
+        processing.core.PApplet.runSketch( a, new LauraSun());		
+	}
 	
 	public static void main(String[] args)
 	{
-		Rainbow();
+		Main main = new Main();
+		// main.startUI();			
+		main.startUI();
 	}
 }
