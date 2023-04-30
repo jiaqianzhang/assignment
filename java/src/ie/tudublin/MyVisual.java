@@ -1,14 +1,43 @@
 package ie.tudublin;
 
+import java.io.Serial;
+
+import ddf.minim.analysis.BeatDetect;
+
+// import processing.core.PApplet;
+
 public class MyVisual extends Visual
-{    
+{  
+    LeftHeart lh;
+    RightHeart rh;  
     JiaHeart jh;
     LauraSun ls;
     ManarBrain mb;
+    Serial port;
+    BeatDetect beat;
+
+    public void setPort(Serial port) {
+        this.port = port;
+    }
+ 
+
+    public void setBeat(BeatDetect beat) {
+        this.beat = beat;
+    }
+
+
+    public Serial getPort() {
+        return port;
+    }
+
+
+    public BeatDetect getBeat() {
+        return beat;
+    }
 
     public void settings()
     {
-        // Use this to make fullscreen
+        // Use this to make fullscreen 
         fullScreen(P3D);
     }
 
@@ -20,11 +49,15 @@ public class MyVisual extends Visual
         loadAudio("Believer.mp3");
 
         // Call this instead to read audio from the microphone
-        startListening(); 
-        
-        jh = new JiaHeart();
-        ls = new LauraSun();
-        mb = new ManarBrain();
+        //startListening(); 
+
+        beat = new BeatDetect(); // Create a new object of type BeatDetect
+
+        lh = new LeftHeart(this, beat, port);
+        rh = new RightHeart(this, beat, port);
+        jh = new JiaHeart(this, beat, port);
+        ls = new LauraSun(this, beat);
+        mb = new ManarBrain(this);
     }
 
     int visual;
@@ -49,9 +82,19 @@ public class MyVisual extends Visual
         {
             visual = 3;
         }
+        if (key == '4')
+        {
+            visual = 4;
+        }
+        if (key == '5')
+        {
+            visual = 5;
+        }
+        // if (key == '6')
+        // {
+        //     visual = 6;
+        // }
     }
-
-    
 
     public void draw()
     {
@@ -74,16 +117,28 @@ public class MyVisual extends Visual
         switch(visual)
         {
             case 1:
-                jh.draw();
+                lh.render();
                 break;
-
-            case 2: 
-                ls.draw();
+            
+            case 2:
+                rh.render();
                 break;
 
             case 3:
-                mb.draw();
+                jh.render();
                 break;
+
+            case 4: 
+                ls.render();
+                break; 
+
+            case 5:
+                mb.render();
+                break;
+            
+            // case 6:
+            //     ck.render();
+            //     break;
 
             default:
                 break;
