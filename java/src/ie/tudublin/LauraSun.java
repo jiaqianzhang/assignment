@@ -1,17 +1,10 @@
 package ie.tudublin;
  
-import ddf.minim.AudioBuffer;
-import ddf.minim.AudioPlayer;
-import ddf.minim.Minim;
 import ddf.minim.analysis.BeatDetect;
  
 public class LauraSun
 {
-    Minim m;
-    AudioPlayer ap;
-    AudioBuffer ab;
     MyVisual p;
-    BeatDetect beat;
  
     //int mode = 0;
     int numDrops = 100; // set the number of drops to 25
@@ -19,14 +12,20 @@ public class LauraSun
     float[] dropY = new float[numDrops];
     float lightningProbability = 0.05f; // set the probability of lightning occurring
  
-    public LauraSun(MyVisual p, BeatDetect beat) 
+    public LauraSun(MyVisual p, BeatDetect beat)
     {
         this.p = p;
         this.beat = beat;
     }
-   
-    private int c1;
  
+    BeatDetect beat;
+   
+    public void render()
+    {
+        draw();
+    }
+ 
+
     public void draw()
     {
         p.background(0);
@@ -58,7 +57,7 @@ public class LauraSun
         p.noStroke();
         for (int i = 0; i < 20; i++)
         {
-            float angle = MyVisual.map(i, 0, 20, 0, p.TWO_PI);//calculates rotation
+            float angle = MyVisual.map(i, 0, 20, 0, MyVisual.TWO_PI);//calculates rotation
             p.pushMatrix();// saves the current position
             p.rotateY(angle + p.frameCount * 0.01f);// rotates surrounding spheres
             p.translate(surroundingSize, 0, 0);
@@ -178,6 +177,8 @@ public class LauraSun
         }
     }
  
+    private int c1;
+ 
     // drawing rain drops
     public void drawRaindrops()
     {
@@ -218,9 +219,6 @@ public class LauraSun
  
     public void stop()
     {
-        ap.close();
-        m.stop();
         p.stop();
     }
- 
 }

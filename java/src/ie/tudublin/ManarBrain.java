@@ -1,14 +1,10 @@
 package ie.tudublin;
  
-import ddf.minim.AudioBuffer;
-import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
-
+ 
 public class ManarBrain
 {
     Minim m;
-    AudioPlayer ap;
-    AudioBuffer ab;
     MyVisual p;
  
     float y = 0;
@@ -19,23 +15,23 @@ public class ManarBrain
     {
         this.p = p;
     }
-
-    float off = 0;
  
-    float lerpedBuffer[] = new float[1024];
- 
+    public void render()
+    {
+        draw();
+    }
+   
     public void draw()
     {
-        p.background(0);
- 
         p.pushMatrix();//seperating drawBrain function from other functions
         drawBrain();//function to draw the brain
         p.popMatrix();
- 
         drawCircles();//function to draw the circles
-        drawWaves();//function to draw the waveform
     }
-         
+ 
+    int brainHeight = 350;
+    float rotationSpeed = 0.02f;
+   
     public void drawBrain()
     {
         p.strokeWeight(8);
@@ -221,7 +217,7 @@ public class ManarBrain
         p. line(-120, 110,0,-70,30,-40);
        
         p. line(230, 40,0,175,40,80);
-        p. line(230, 40,0,175,40,-80);
+        p.line(230, 40,0,175,40,-80);
         p.endShape();
     }//end drawBrain
  
@@ -248,44 +244,9 @@ public class ManarBrain
         angle += 0.05;//speed of the smaller rotating circles
     }//end function drawCircles
  
- 
-    float brainHeight = 350;
-    float rotationSpeed = 0.02f;//rotation speed of the brain
-   
-    public void drawWaves()
-    {
-        float halfH = p.height/2 + 350;
-        float average = 0;
-        float sum = 0;
-        off += 1;
- 
-        // calculate sum and average of the samples
-        // lerp each element of buffer
-        for(int i = 0 ; i < ab.size() ; i ++)
-        {
-            sum += MyVisual.abs(ab.get(i));
-            lerpedBuffer[i] = MyVisual.lerp(lerpedBuffer[i], ab.get(i), 0.1f);
-        }
- 
-        average= sum / (float) ab.size();
- 
-        smoothedAmplitude = MyVisual.lerp(smoothedAmplitude, average, 0.1f);
- 
-        float a = (float)p.width / (float)ab.size() * 10; // width
-        float space = (float)p.width * 1; //space between each line on the wave. spans across the full screen
-        float w = space / 2;
-        for(int i = 0 ; i < ab.size() ; i ++)
-        {
-            p.stroke(243, 165, 0);
-            float f = lerpedBuffer[i] * halfH/2 * 1; //height of the wave
-            float x = (i * a) - w;
-            p.line(x, halfH + f, x, halfH - f);
-        }
-    }//end drawWaves function
-     
+    // method that stops the program
     public void stop()
     {
-        ap.close();
-        m.stop();
+        p.stop(); // stop process in the superclass's stop()
     }
 }
