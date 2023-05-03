@@ -18,11 +18,17 @@ We used a mix of 2D and 3D visuals in the program. Our first visual featured a h
 
 # Instructions
 Press space bar to play the song
+
 Press keys 1-5 to view different visuals 
+
 Key 1: left heart visual will be playing 
+
 Key 2: right heart visual will be playing 
+
 Key 3: jiaheart visual will be playing 
+
 Key 4: laurasun visual will be playing 
+
 Key 5: manarbrain visual will be playing 
 
 # How it works
