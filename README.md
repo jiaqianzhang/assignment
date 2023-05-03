@@ -4,6 +4,8 @@ Name: Jia Zhang, Laura Wei, Manar Saighi
 
 Student Number: C21408862, C21371683, C21440946
 
+Class Group: TU858/2
+
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
 - Create a new package named your student number and put all your code in this package.
@@ -15,6 +17,11 @@ Student Number: C21408862, C21371683, C21440946
 For this assignment we were required to create an abstract visual story of a song. The Song we chose to use is ‘Believer’ by imagine dragons. The song has four choruses, each team member took ownership of one section. we came up with ideas and worked on part of it together the rest is individual work. 
 
 We used a mix of 2D and 3D visuals in the program. Our first visual featured a heart pulsated in sync with the amplitude of the music. Captivating the song’s emotional impact. Our second visual contains blue sea waves intermingled with rain, stars, lightning and a radiant  sun in the center of the screen surrounded by spheres that added depth and dimension. Our third visual is a depiction of human brain with blue spheres surrounding it, with a pattern of sound waves at the bottom adding layers to our creation. 
+
+# Screenshots
+![IMG_3491](https://user-images.githubusercontent.com/123373043/236053130-10e15024-db34-4e9a-b43d-a11380a1717f.jpg)
+![IMG_3492](https://user-images.githubusercontent.com/123373043/236053137-fdb863be-6865-4886-bab5-49c98b90ff9c.jpg)
+![IMG_3493](https://user-images.githubusercontent.com/123373043/236053148-b58761dc-07df-4673-a117-50b569fb70f9.jpg)
 
 # Instructions
 Press space bar to play the song
