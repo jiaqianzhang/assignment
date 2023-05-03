@@ -16,6 +16,9 @@ We used a mix of 2D and 3D visuals in the program. Our first visual featured a h
 ![IMG_3492](https://user-images.githubusercontent.com/123373043/236053137-fdb863be-6865-4886-bab5-49c98b90ff9c.jpg)
 ![IMG_3493](https://user-images.githubusercontent.com/123373043/236053148-b58761dc-07df-4673-a117-50b569fb70f9.jpg)
 
+# Video
+https://clipchamp.com/watch/2GP0uHkeBp3
+
 # Instructions
 Press space bar to play the song
 
