@@ -6,13 +6,6 @@ Student Number: C21408862, C21371683, C21440946
 
 Class Group: TU858/2
 
-## Instructions
-- Fork this repository and use it a starter project for your assignment
-- Create a new package named your student number and put all your code in this package.
-- You should start by creating a subclass of ie.tudublin.Visual
-- There is an example visualiser called MyVisual in the example package
-- Check out the WaveForm and AudioBandsVisual for examples of how to call the Processing functions from other classes that are not subclasses of PApplet
-
 # Description of the assignment
 For this assignment we were required to create an abstract visual story of a song. The Song we chose to use is ‘Believer’ by imagine dragons. The song has four choruses, each team member took ownership of one section. we came up with ideas and worked on part of it together the rest is individual work. 
 
