@@ -48,7 +48,6 @@ This set up method is in MyVisual class which loads our audio file ‘’Believe
 The keypressed method allows us to control the program with certain keyboard inputs, like playing audio file or selecting a visual. The switch statement is used to switch between different visual modes based on the visual variables between 1-5. Then the switch statement uses the value of visual to determine which visual mode to render which allows the user to switch between different visual modes while the audio is playing. 
 
 <img width="251" alt="image" src="https://user-images.githubusercontent.com/123373043/236051276-8450a42c-f4f8-402f-a6f8-1ba5591d607b.png">
-
 <img width="175" alt="image" src="https://user-images.githubusercontent.com/123373043/236051428-7820c25e-bbe2-4445-83df-c19a2343bd11.png">
 
 
