@@ -59,7 +59,28 @@ The keypressed method allows us to control the program with certain keyboard inp
 <img width="251" alt="image" src="https://user-images.githubusercontent.com/123373043/236051276-8450a42c-f4f8-402f-a6f8-1ba5591d607b.png">
 <img width="175" alt="image" src="https://user-images.githubusercontent.com/123373043/236051428-7820c25e-bbe2-4445-83df-c19a2343bd11.png">
 
+# List of classes/assets
 
+| Class/asset | Source |
+|-----------|-----------|
+| JiaHeart.java | Jia C21408862 written |
+| LeftHeart.java | Jia C21408862 written |
+| RightHeart.java | Jia C21408862 written |
+| LauraSun.java | Laura C21371683 written |
+| ManarBrain.java | Manar C21440946 written |
+
+- Jia C21408862
+
+I did JiaHeart, LeftHeart and RightHeart as my music visual. These music visual displays a 2D full heart, 2D left heart and 2D right heart. These types of hearts analyses the music we have chosen and beats along with it using BeatDetect beat from the minim library. The full heart is created by two bezierVertex, one for the left side of heart and the other for the right side. The heart is set by the vertex function to display in the middle of the screen. I am most proud of getting the heart shape to be symmetrical to eachother on the center of the screen. It took me a long time to figure out the correct and exact measurements to draw this. During this assignment, I've gained a better understanding of passing parameters and referencing them in other java files. I also learned that not all files need to extend PApplet which I did not know before. I have gained more experience with inheritance and encapsulation throughout this assignment.
+
+
+- Manar C21440946
+ 
+My visual is ManarBrain which depicts a 3D brain rotating on the x axis, and 2D circles spinning around the brain. These circles follow a large transparent ring that circles around the brain. The brain illustration was created using line functions on the x y and z axes, and connecting them at each others coordinates to finally create the brain shape. This is what I am most proud of in this assignment, it was definitely the piece of code that took me the longest. I had originally planned on adding a waveform illustration along the bottom of the screen but it was messing up our whole thing so. Overall this was an interesting project unlike anything else I’ve ever had to work on which was nice. I enjoyed learning new things through a cool medium like this. Seeing our visuals together and figuring out how to combine them was satisfying and worth the work. Working with my teammates on this project was also fun.
+
+- Laura C21371683
+
+I did music visual LauraSun, which contains many different drawings like lightning, rain, sun, spheres, sea waves, and stars. I am most proud of my Lightning, it took me a while to figure out what I wanted it to look like. I think it looks very cool. i decided not to put stars in my final visual because it could trigger people's trypophobia and to also maintain the overall aesthetic of all our visuals, but the code for it is still there. Through this project, I learned how to connect visuals and effectively use functions like render() and passing parameters. I am also confident in using all the git commands. This was an enjoyable project that I did with my team members. I am proud of our final project, I feel very accomplished.
 # What I am most proud of in the assignment
 We are proud of figuring out how to combine each of our visuals and make the pressing keys work. And we learnt how to set up our own git repository and how we can all collaborate and allowing us to appreciate the progress we made as a team. We played around with each other’s code and helped each other out. 
  
